@@ -1,0 +1,13 @@
+jankins:- 
+dnf install java-17-amazon-corretto -y
+java -version
+wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+dnf install jenkins -y
+systemctl enable jenkins
+systemctl start Jenkins
+
+
+{http://your_amazon_linux_instance_ip:8080} iske dalne k bad 
+cat /var/lib/jenkins/secrets/initialAdminPassword
